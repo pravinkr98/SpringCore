@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- config DriverManagerDataSource -->
+	<!-- property name must be same i.e. available in the DriverManagerDataSource class -->
+	<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+	<!-- <property name="url" value="jdbc:mysql:///praveendb"/>-->
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>		
+	</bean>
+	
+	<bean id="scds" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" parent="drds"/>
+	<bean id="hkds" class="com.zaxxer.hikari.HikariDataSource" parent="drds">
+		<property name="jdbcUrl" value="jdbc:mysql:///praveendb"/>
+		<property name="maximumPoolSize" value="100"/>
+		<property name="minimumIdle" value="10"/>
+	</bean>
+	
+	<!-- DAO class config -->
+	<bean id="studDAO" class="com.ps.dao.StudentDAOImpl">
+		<constructor-arg ref="hkds"/>
+	</bean>
+	
+</beans>
