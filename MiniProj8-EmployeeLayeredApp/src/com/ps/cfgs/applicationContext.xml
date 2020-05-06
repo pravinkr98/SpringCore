@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<property name="username" value="system"/>
+		<property name="password" value="manager"/>
+	</bean>
+	
+	<!-- DAO class config -->
+	<bean id="empDAO" class="com.ps.dao.EmployeeDAOImpl" >
+		<constructor-arg ref="drds"/>
+	</bean>
+	
+	<!-- config service class -->
+	<bean id="empService" class="com.ps.service.EmployeeOperationServiceImpl">
+		<constructor-arg ref="empDAO"/>
+	</bean>
+	
+	<!-- controller class config -->
+	<bean id="empController" class="com.ps.controller.EmployeeController">
+		<constructor-arg ref="empService"/>
+	</bean>
+
+</beans>
