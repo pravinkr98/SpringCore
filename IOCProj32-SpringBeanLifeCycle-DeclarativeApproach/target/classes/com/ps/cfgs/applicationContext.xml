@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="myInit" default-destroy-method="myDestroy" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- <bean id="votElg" class="com.ps.beans.Votar" init-method="myInit" destroy-method="myDestroy" scope="singleton">
+		<property name="name" value="Rahul"/>
+		<property name="age" value="-24"/>
+		<property name="addrs" value="muz"/>
+	</bean> -->
+	
+	<bean id="votElg" class="com.ps.beans.Votar" scope="singleton">
+		<property name="name" value="Rahul"/>
+		<property name="age" value="-24"/>
+		<property name="addrs" value="muz"/>
+	</bean>
+
+</beans>
