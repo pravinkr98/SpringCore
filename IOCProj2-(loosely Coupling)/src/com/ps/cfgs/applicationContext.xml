@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="dtdc" class="com.ps.beans.DTDC"/>
+<bean id="blueDart" class="com.ps.beans.BlueDart"/>
+<bean id="fpk" class="com.ps.beans.Flipkart">
+<property name="courier" ref="blueDart"/>
+</bean>
+</beans>
