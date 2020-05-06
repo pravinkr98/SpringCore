@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- we can use constructor-arg without index,name,type but we must follow order -->
+	
+	<bean id="st" class="com.ps.beans.Student">
+		<constructor-arg value="raja" type="String" name="sname" index="1"/>
+		<constructor-arg value="78.65f" type="float"/>
+		<constructor-arg value="1001" type="int"/>
+	</bean>
+	
+	<bean id="mk" class="com.ps.beans.Marks">
+		<constructor-arg index="2" value="30"/>
+		<constructor-arg index="0" value="10"/>
+		<constructor-arg index="1" value="20"/>
+		
+	</bean>	
+	
+	<bean id="crs" class="com.ps.beans.Course">
+		<constructor-arg name="cfee" value="5600"/>
+		<constructor-arg name="cid" value="201"/>
+		<constructor-arg name="cname" value="Java"/>
+		<constructor-arg name="facultyName" value="Nataraj Sir"/>
+	</bean>
+	
+</beans>
