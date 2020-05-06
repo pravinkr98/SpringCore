@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Date classes cfg -->
+<bean id="sysDate" class="java.util.Date"/>
+
+<bean id="dobDate" class="java.util.Date">
+<property name="year" value="90"/>
+<property name="month" value="11"/>
+<property name="date" value="12"/>
+</bean>
+
+<!-- Spring bean cfg -->
+
+<bean id="stDetails" class="com.ps.beans.StudentDetails">
+	<property name="marks">
+		<array>
+			<value>100</value>
+			<value>89</value>
+			<value>45</value>
+		</array>
+	</property>
+	<property name="impDates">
+		<list>
+			<ref bean="sysDate"/>
+			<ref bean="dobDate"/>
+		</list>
+	</property>
+</bean>
+
+<!-- ___________________________________ -->
+
+<bean id="clgDetails" class="com.ps.beans.CollegeDetails">
+	<property name="studentNames">
+		<list value-type="java.lang.String">
+			<value>raja</value>
+			<value>suresh</value>
+			<value>rajesh</value>
+			<value>raja</value>
+		</list>
+	</property>
+	<property name="impDates">
+		<list>
+			<ref bean="sysDate"/>
+			<ref bean="dobDate"/>
+			<ref bean="sysDate"/>
+		</list>
+	</property>
+</bean>
+
+<!-- ________________________________________ -->
+
+<bean id="moh" class="com.ps.beans.MinistryOfHR">
+	<property name="aadharNos">
+		<set value-type="java.lang.Long">
+			<value>879376397687</value>
+			<value>879376397697</value>
+			<value>879376397767</value>
+			<value>879376397687</value>
+		</set>
+	</property>
+	<property name="impDates">
+		<set value-type="java.util.Date">
+			<ref bean="sysDate"/>
+			<ref bean="dobDate"/>
+			<ref bean="sysDate"/>
+		</set>
+	</property>
+</bean>
+
+<!--  ___________________________________________ -->
+
+<bean id="fs" class="com.ps.beans.FruitsStore">
+	<property name="fruitsInfo">
+		<props>
+			<prop key="banana">yellow</prop>
+			<prop key="apple">red</prop>
+			<prop key="grapesh">black</prop>
+			<prop key="orange">yellow</prop>
+		</props>
+	</property>
+</bean>
+
+<!-- ___________________________________________ -->
+
+<bean id="profile" class="com.ps.beans.PersonProfile">
+	<property name="phones">
+		<map>
+			<entry>
+				<key><value>personal</value></key>
+				<value>9631437968</value>
+			</entry>
+			<entry key="office" value="9431670775"></entry>
+			<entry key="office1">
+				<value>9234789007</value>
+			</entry>
+		</map>
+	</property>
+	<property name="bankAccount">
+		<map>
+			<entry>
+				<key><value>31614040129</value></key>
+				<value>SBI</value>
+			</entry>
+			<entry key="50030031940" value="ABC"></entry>
+		<entry value="PNB">
+				<key><value>20942200068351</value></key>
+			</entry>
+		</map>
+	</property>
+	<property name="impDates">
+		<map>
+			<entry>
+				<key><value>systemDate</value></key>
+				<ref bean="sysDate"/>
+			</entry>
+			<entry key="dob" value-ref="dobDate"/>
+			<entry key="dob">
+				<ref bean="dobDate"/>
+			</entry>
+		</map>
+	</property>
+</bean>
+
+</beans>
+  
