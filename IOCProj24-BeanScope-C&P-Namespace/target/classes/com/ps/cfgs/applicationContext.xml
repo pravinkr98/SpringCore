@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<bean id="dob" class="java.util.Date" p:year="90" p:month="11" p:date="24"/>
+		
+	<bean id="doj" class="java.util.Date" p:year="115" p:month="10" p:date="15"/>
+		
+	<bean id="dom" class="java.util.Date" p:year="117" p:month="5" p:date="11"/>
+		
+	<!-- Spring bean scope cfg -->
+	<!-- <bean id="pt" class="com.ps.beans.Printer" scope="prototype" factory-method="getInstance" /> -->
+	
+	<bean id="pt" class="com.ps.beans.Printer" scope="singleton" factory-method="getInstance" />
+	<bean id="pt1" class="com.ps.beans.Printer" scope="singleton" factory-method="getInstance"/>
+	
+	<!-- Spring bean cfg -->
+	<bean id="rajaProfile" class="com.ps.beans.PersonProfile" c:id="7484957490" c:name="raja" c:age="23" c:dob-ref="dob" c:doj-ref="doj" c:dom-ref="dom" scope="prototype"/>
+		
+	
+
+</beans>
