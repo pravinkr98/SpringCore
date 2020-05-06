@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="dobDt" class="java.util.Date">
+		<property name="year" value="120"/>
+		<property name="month" value="4"/>
+		<property name="date" value="4"/>
+	</bean>
+
+	<bean id="person" class="com.ps.beans.PersonProfile">
+	    <property name="pid" value="23456"/> 
+		 <property name="pname" value="karan"/> 
+		<property name="paddrs" value="hyd"/>
+		<!-- <property name="dob" ref="dobDt"/> -->
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+	<!-- <context:annotation-config/> -->
+
+</beans>
