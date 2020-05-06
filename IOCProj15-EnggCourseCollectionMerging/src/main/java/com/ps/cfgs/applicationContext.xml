@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="bfyEngg" class="com.ps.beans.EnggCourse" abstract="true">
+		<property name="subjects">
+			<list>
+				<value>M1</value>
+				<value>ED</value>
+				<value>Physics</value>
+				<value>Chemistry</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="efyEngg" class="com.ps.beans.EnggCourse" parent="bfyEngg">
+		<property name="subjects">
+			<list>
+				<value>EDC</value>
+				<value>C</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="csfyEngg" class="com.ps.beans.EnggCourse" parent="bfyEngg">
+		<property name="subjects">
+			<list merge="default">
+				<value>C</value>
+				<value>OS</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="mhfyEngg" class="com.ps.beans.EnggCourse" parent="bfyEngg">
+		<property name="subjects">
+			<list merge="false">
+				<value>Engine</value>
+				<value>Rediator</value>
+			</list>
+		</property>
+	</bean>
+	
+	<bean id="cvfyEngg" class="com.ps.beans.EnggCourse" parent="bfyEngg">
+		<property name="subjects">
+			<list merge="true">
+				<value>Architecture</value>
+				<value>DesignGraph</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>
