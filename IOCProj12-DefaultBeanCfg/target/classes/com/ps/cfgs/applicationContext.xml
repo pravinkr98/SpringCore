@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean class="com.ps.beans.Car">
+		<property name="regNo" value="TS09JK4577"/>
+		<property name="ownerName" value="raja"/>
+		<property name="modelName" value="Swift"/>
+		<property name="color" value="red"/>
+		<property name="engineCc" value="1200CC"/>
+		<property name="makeCompany" value="MarutiSuzuki"/>
+		<property name="type" value="sedan"/>
+		<property name="fuelType" value="Diesel"/>
+	</bean>
+	<bean class="com.ps.beans.Car">
+		<property name="regNo" value="TS09HK7676"/>
+		<property name="ownerName" value="rani"/>
+		<property name="modelName" value="Swift"/>
+		<property name="color" value="red"/>
+		<property name="engineCc" value="1200CC"/>
+		<property name="makeCompany" value="MarutiSuzuki"/>
+		<property name="type" value="sedan"/>
+		<property name="fuelType" value="Diesel"/>
+	</bean>
+
+</beans>
