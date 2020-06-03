@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- cfg Service class locator -->
+	<bean id="locator" class="com.ps.locator.IccScoreCompServiceLocator"/>
+	
+	<!-- Local Service class cfg -->
+	<bean id="cbService" class="com.ps.service.CrickBuzzServiceImpl">
+		<constructor-arg ref="locator"/>	 <!-- Since service locator is factory bean... The resultant external comp ref will be injected -->
+	</bean>
+
+</beans>
